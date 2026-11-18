@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLOA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Inter:wght@400;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root {
+      --green-dark: #4f761f;
+      --green-btn: #6a9a3a;
+      --green-link: #58bd3b;
+      --naver: #43b600;
+      --gray-text: #767676;
+      --btn-light: #f8f7f2;
+      --text-dark: #353535;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { min-height: 100%; background: #e9f3dc; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      font-family: 'Pretendard', 'Inter', sans-serif;
+    }
+
+    /* 428 x 924 mobile frame */
+    .screen {
+      position: relative;
+      width: 428px;
+      height: 924px;
+      overflow: hidden;
+      background: radial-gradient(ellipse 214px 462px at 214px 462px,
+                  #ffffff 23.558%, #e4f3d1 100%);
+    }
+
+    /* Decoration / image slots (assets not available — left empty) */
+    .slot { position: absolute; pointer-events: none; }
+    .slot--leaf-tl    { left: -7px;  top: 0;   width: 120px; height: 120px; }
+    .slot--leaf-tr    { left: 231px; top: 0;   width: 197px; height: 140px; }
+    .slot--branch-l   { left: 0;     top: 119px; width: 120px; height: 90px; }
+    .slot--branch-r   { left: 314px; top: 102px; width: 130px; height: 80px; }
+    .slot--salad      { left: 60px;  top: 344px; width: 272px; height: 253px; }
+
+    .logo {
+      position: absolute;
+      left: calc(50% - 1px);
+      top: 197px;
+      transform: translateX(-50%);
+      font-family: 'Abhaya Libre', serif;
+      font-weight: 700;
+      font-size: 70px;
+      line-height: normal;
+      color: var(--green-dark);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .tagline {
+      position: absolute;
+      left: 50%;
+      top: 278px;
+      transform: translateX(-50%);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.552;
+      letter-spacing: 0.75px;
+      color: #000;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .login-btn {
+      position: absolute;
+      left: 73px;
+      width: 285px;
+      height: 45px;
+      border: 0;
+      border-radius: 23px;
+      display: flex;
+      align-items: center;
+      font-family: 'Inter', 'Pretendard', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      cursor: pointer;
+      background: var(--btn-light);
+      color: var(--text-dark);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .login-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); }
+    .login-btn:active { transform: translateY(1px);  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+    .login-btn:focus-visible { outline: 2px solid var(--green-dark); outline-offset: 3px; }
+
+    .login-btn--kakao { top: 607px; background: var(--green-btn); color: #fff; }
+    .login-btn--naver { top: 672px; }
+    .login-btn--email { top: 737px; }
+
+    .login-btn__icon {
+      position: absolute;
+      left: 68px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+    }
+    .login-btn__icon--kakao { width: 19px; height: 19px; }
+    .login-btn__icon--email { width: 16px; height: 12px; }
+
+    .login-btn__n {
+      position: absolute;
+      left: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 900;
+      font-size: 20px;
+      line-height: normal;
+      color: var(--naver);
+    }
+
+    .login-btn__label {
+      position: absolute;
+      left: 103px;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+    }
+
+    .signup {
+      position: absolute;
+      left: calc(50% - 73px);
+      top: 802px;
+      font-family: 'Inter', 'Pretendard', sans-serif;
+      font-size: 12px;
+      line-height: normal;
+      color: var(--gray-text);
+      white-space: nowrap;
+    }
+    .signup a { color: var(--green-link); text-decoration: none; }
+    .signup a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <!-- Image slots: Figma assets could not be downloaded, so these stay empty -->
+    <div class="slot slot--leaf-tl" aria-hidden="true"></div>
+    <div class="slot slot--leaf-tr" aria-hidden="true"></div>
+    <div class="slot slot--branch-l" aria-hidden="true"></div>
+    <div class="slot slot--branch-r" aria-hidden="true"></div>
+    <div class="slot slot--salad" aria-hidden="true"></div>
+
+    <h1 class="logo">SLOA</h1>
+    <p class="tagline">
+      천천히 , 건강하게 빛나는 나<br />
+      저속노화 ‧ 제로식단 다이어트
+    </p>
+
+    <button type="button" class="login-btn login-btn--kakao">
+      <span class="login-btn__icon login-btn__icon--kakao" aria-hidden="true"></span>
+      <span class="login-btn__label">카카오로 로그인</span>
+    </button>
+
+    <button type="button" class="login-btn login-btn--naver">
+      <span class="login-btn__n" aria-hidden="true">N</span>
+      <span class="login-btn__label">네이버로 로그인</span>
+    </button>
+
+    <button type="button" class="login-btn login-btn--email">
+      <span class="login-btn__icon login-btn__icon--email" aria-hidden="true"></span>
+      <span class="login-btn__label">이메일로 로그인</span>
+    </button>
+
+    <p class="signup">계정이 없으신가요? <a href="#">회원가입</a></p>
+  </main>
+</body>
+</html>
